@@ -1,0 +1,20 @@
+Извелекает среднее значение из столбца (dop_information) и сумма значений столбца (dop_information)
+SELECT AVG(dop_information)AS 'среднее значение iq', SUM(dop_information) AS 'Сумма всех iq' FROM information
+
+Возвращает количество строк в столбце age
+SELECT COUNT(age) FROM information
+
+функция возвращает общее количество строк в таблице
+SELECT COUNT(*) FROM information
+
+Ищет минимальное значение столбца
+SELECT MIN(age) FROM information
+
+Ищет максимальное значение стобца
+SELECT MAX(age) FROM information
+
+Обновление значения строки
+UPDATE information SET age = '30' WHERE id_user = '5'
+
+Удаление строки у которой айди равняется - 4
+DELETE FROM information WHERE id_user = '4'

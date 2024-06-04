@@ -1,0 +1,40 @@
+Показывает только за число 29
+SELECT * FROM `orders` WHERE dataa = '2023-03-29'
+
+Показывает только за числа от 28 до 30
+SELECT * FROM orders WHERE dataa BETWEEN '2023-03-28' AND '2023-03-30'
+
+Показвает сегодняшнюю дату и время
+SELECT NOW()
+
+Показывает заказы в определенном промежутке времени с 28 числа до 30 числа
+SELECT * FROM orders WHERE poldata BETWEEN '2023-03-28' AND '2023-03-30'
+
+Показывает только за 30 число заказы
+SELECT * FROM orders WHERE poldata BETWEEN '2023-03-30' AND '2023-03-31'
+
+Показывает заказы только за 30 день с 00:00 по 12:00
+SELECT * FROM orders WHERE poldata BETWEEN '2023-03-30 00:00:00' AND '2023-03-30 12:00:00'
+
+Сложение дней +5 дней и 0 часов, выводит дату
+SELECT DATE_ADD('1900-01-01 00:00:00', INTERVAL '5 0' DAY_HOUR)
+
+показывает часы в этой дате
+SELECT EXTRACT(HOUR FROM '2023-03-30 11:07:12') 
+
+Определяет дату -5 дней от текущей получилось 2023-03-25
+SELECT CURDATE() -5
+
+SELECT * FROM orderss WHERE data_sale BETWEEN '2023-03-25' AND '2023-03-30'
+
+SELECT DATEDIFF('2023-04-05 15:25:54', '2023-03-30 11:25:54')- вычитает дни и показывает
+сколько дней
+
+SELECT id_orders, name_orders,
+TIMEDIFF('2023-03-04 16:21:00','2023-03-01 13:45:12') from orderss
+WHERE id_orders = 1
+
+SELECT unix_timestamp('2023-03-01 13:45:12')
+
+SELECT id_orders, name_orders, sale, value, unix_timestamp(data_sale) - unix_timestamp(data_entrance) AS 'vichitanie' FROM orderss
+ORDER BY vichitanie desc
